@@ -2,5 +2,6 @@ FROM jnitstacklynx/openjdk
 ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} app.jar
 CMD ["java", "-jar","/app.jar"]
-ENTRYPOINT ["/bin/bash","-c","sleep 20"]
+CMD [ "/bin/bash","-c","sleep 20"]
+ENTRYPOINT [ "curl","http://localhost:8088/refinitivdataparser/processLGDF" ]
 
